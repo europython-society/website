@@ -4,6 +4,9 @@ import { Fullbleed } from "./layout/fullbleed";
 import { LogoExtended } from "./logo/logo-extended";
 import links from "../data/links.json";
 import { EPSLogo } from "./logo/eps-logo";
+
+const buildTimestamp = import.meta.env.TIMESTAMP;
+const gitVersion = import.meta.env.GIT_VERSION;
 ---
 
 <Fullbleed className="bg-primary text-white">
@@ -84,7 +87,9 @@ import { EPSLogo } from "./logo/eps-logo";
             github.com/europython <span> ↗</span>
           </a>
         </p>
+          <p class="mb-4" style="color: rgba(255, 255, 255, 0.4)">version: {gitVersion} @ {buildTimestamp}</p>
       </div>
     </article>
+
   </footer>
 </Fullbleed>
