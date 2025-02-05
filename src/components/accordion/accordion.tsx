@@ -19,11 +19,17 @@ export const Accordion = ({
         )}
       >
         <span className="font-semibold">{title}</span>
-        <span aria-hidden="true" className="group-open:hidden">+</span>
-        <span aria-hidden="true" className="group-open:block hidden">−</span>
+        <span aria-hidden="true" className="group-open:hidden">
+          +
+        </span>
+        <span aria-hidden="true" className="group-open:block hidden">
+          −
+        </span>
       </summary>
 
-      <div id={id} className="pl-4">{children}</div>
+      <div id={id} className="pl-4">
+        {children}
+      </div>
     </details>
   );
 };
