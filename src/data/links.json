@@ -12,12 +12,12 @@
           "path": "/programme/selection"
         },
         {
-          "name": "Speaker Mentorship",
-          "path": "/programme/mentorship"
+          "name": "Community Voting",
+          "path": "/programme/voting"
         },
         {
-          "name": "Call for Proposals",
-          "path": "/programme/cfp"
+          "name": "Speaker Mentorship",
+          "path": "/programme/mentorship"
         }
       ]
     },
