@@ -5,5 +5,5 @@ url: /programme/voting/
 image: voting.jpg
 ---
 
-Vote for the talks **YOU** would like to see! We are a
-community conference and your votes help shape the programme.
+Vote for the talks **YOU** would like to see! We are a community conference and
+your votes help shape the programme.
