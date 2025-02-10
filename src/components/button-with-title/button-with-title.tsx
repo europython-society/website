@@ -1,4 +1,4 @@
-import { ButtonLink } from "../button-link";
+import ButtonLink from "../button-link/button-link.astro";
 import { Title } from "../typography/title";
 
 type Props = {
@@ -15,7 +15,7 @@ export const ButtonWithTitle = ({ title, href, text }: Props) => {
       </Title>
 
       <div>
-        <ButtonLink href={href}>{text}</ButtonLink>
+        <ButtonLink url={href}>{text}</ButtonLink>
       </div>
     </div>
   );

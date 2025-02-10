@@ -1,0 +1,30 @@
+---
+import type React from 'react';
+
+export interface Props {
+  url: string;
+  children: React.ReactNode;
+  className?: string;
+  secondary?: boolean;
+  isExternal?: boolean;
+}
+
+const { url, className = "", secondary = false, isExternal } = Astro.props;
+const resolvedIsExternal = isExternal !== undefined ? isExternal : url.startsWith("http");
+---
+
+<a
+  class={`font-bold text-lg px-4 py-4 bg-button rounded-[60px] inline-block leading-4 hover:bg-button-hover not-prose
+    ${secondary ? "bg-primary text-white hover:bg-primary-hover" : "text-text-inverted"}
+    ${secondary ? "text-text" : ""}
+    ${className || ""}`}
+  href={url}
+>
+  <slot />
+
+  {resolvedIsExternal && (
+    <span class="inline-block ml-1 font-system text-lg leading-4">
+      ↗
+    </span>
+  )}
+</a>

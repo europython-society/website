@@ -1,6 +1,6 @@
 ---
 import Prose from "../prose/prose.astro";
-import { ButtonLink } from "../button-link";
+import ButtonLink from "../button-link/button-link.astro";
 import { Title } from "../typography/title";
 import { Image } from "astro:assets";
 
@@ -31,12 +31,12 @@ import venueImage from "./prague.png";
     </Prose>
 
     <div class="space-x-4 mb-5">
-      <ButtonLink href="/where">
+      <ButtonLink url="/where">
         Where is EuroPython?
       </ButtonLink>
     </div>
     <div class="space-x-12">
-      <ButtonLink href="/explore">
+      <ButtonLink url="/explore">
         Explore Prague
       </ButtonLink>
     </div>

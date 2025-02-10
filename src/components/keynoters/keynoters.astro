@@ -1,5 +1,5 @@
 ---
-import { ButtonLink } from "../button-link/button-link";
+import ButtonLink from "../button-link/button-link.astro";
 import { Title } from "../typography/title";
 import Keynoter from "./keynoter.astro";
 
@@ -120,7 +120,7 @@ const placeholders = Math.max(0, 6 - keynoters.length);
         <span class="text-body-light inline-block mr-2">#</span>
         See other sessions
       </h3>
-      <ButtonLink href="/sessions">List of Sessions</ButtonLink>
+      <ButtonLink url="/sessions">List of Sessions</ButtonLink>
     </div>
   </div>
 </section>
