@@ -5,5 +5,5 @@ url: https://forms.gle/4GTJjwZ1nHBGetM18
 image: mentorship1.jpg
 ---
 
-Be part of the reviewer team! **YOUR** insights help us curate a diverse and
+Join the team to review talk proposals! **YOUR** feedback helps us create a diverse and
 high-quality programme.
