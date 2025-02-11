@@ -18,6 +18,10 @@
         {
           "name": "Speaker Mentorship",
           "path": "/programme/mentorship"
+        },
+        {
+          "name": "C API Summit",
+          "path": "/programme/c-api-summit"
         }
       ]
     },
