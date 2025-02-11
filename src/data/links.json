@@ -18,12 +18,7 @@
         {
           "name": "Call for Proposals",
           "path": "/programme/cfp"
-        }
-      ]
-    },
-    {
-      "name": "Events",
-      "items": [
+        },
         {
           "name": "C API Summit",
           "path": "/events/c-api-summit"
