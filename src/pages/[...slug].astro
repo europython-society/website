@@ -14,7 +14,7 @@ import BenefitItem from "../components/benefits-list/benefit-item.astro";
 import { ButtonWithTitle } from "../components/button-with-title";
 import { Note } from "../components/note";
 import { SponsorTiers } from "../components/sponsor-tiers";
-import { Accordion } from "../components/accordion";
+import Accordion from "../components/accordion/accordion.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("pages");
