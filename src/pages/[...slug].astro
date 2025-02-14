@@ -11,7 +11,7 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
 import BenefitsList from "../components/benefits-list/benefits-list.astro";
 import BenefitItem from "../components/benefits-list/benefit-item.astro";
 import { Note } from "../components/note";
-import { SponsorTiers } from "../components/sponsor-tiers";
+import SponsorTiers from "../components/sponsor-tiers/sponsor-tiers.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("pages");
