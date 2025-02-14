@@ -16,7 +16,7 @@ const resolvedIsExternal = isExternal !== undefined ? isExternal : url?.startsWi
 
 <a
   class={`font-bold text-lg px-4 py-4 bg-button rounded-[60px] inline-block leading-4 hover:bg-button-hover not-prose
-    ${secondary ? "bg-primary text-white hover:bg-primary-hover" : "text-text-inverted"}
+    ${secondary || disabled ? "bg-primary text-white hover:bg-primary-hover" : "text-text-inverted"}
     ${secondary ? "text-text" : ""}
     ${className || ""}
     ${disabled ? "opacity-50 pointer-events-none" : ""}`}
