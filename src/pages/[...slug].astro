@@ -3,15 +3,13 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
 import Prose from "../components/prose/prose.astro";
-import { ButtonLink } from "../components/button-link";
-import { Button } from "../components/button";
+import ButtonLink from "../components/button-link/button-link.astro";
 import { Separator } from "../components/separator/separator";
 import { Map } from "../components/map";
 import { MapSprints } from "../components//map-for-sprints";
 import { YouTube } from "@astro-community/astro-embed-youtube";
 import BenefitsList from "../components/benefits-list/benefits-list.astro";
 import BenefitItem from "../components/benefits-list/benefit-item.astro";
-import { ButtonWithTitle } from "../components/button-with-title";
 import { Note } from "../components/note";
 import { SponsorTiers } from "../components/sponsor-tiers";
 
@@ -38,13 +36,11 @@ const description = post.data.subtitle;
     <Content
       components={{
         ButtonLink,
-        Button,
         Map,
         MapSprints,
         YouTube,
         BenefitItem,
         BenefitsList,
-        ButtonWithTitle,
         Note,
         SponsorTiers,
         hr: Separator,

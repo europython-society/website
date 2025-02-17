@@ -1,5 +1,5 @@
 ---
-import { ButtonLink } from "../button-link";
+import ButtonLink from "../button-link/button-link.astro";
 import HeaderButton from "./header-button.astro";
 
 export interface Props {
@@ -15,17 +15,17 @@ const IS_LIVE = false;
   {
     !mobile ? (
       <>
-        <ButtonLink secondary href="https://www.europython-society.org/coc/">
+        <ButtonLink secondary url="https://www.europython-society.org/coc/">
           <abbr title="Code of Conduct" class="no-underline md:hidden">
             CoC
           </abbr>
           <span class="hidden md:inline">Code of Conduct</span>
         </ButtonLink>
-        <ButtonLink href="https://voting.europython.eu" className="hidden md:block">
+        <ButtonLink url="https://voting.europython.eu" className="hidden md:block">
           <span>Community vote</span>
         </ButtonLink>
         {IS_LIVE && (
-          <ButtonLink href="/live">
+          <ButtonLink url="/live">
             Live
             <span class="hidden md:inline"> 📺</span>
           </ButtonLink>

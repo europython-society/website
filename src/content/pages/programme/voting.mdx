@@ -3,6 +3,9 @@ title: Voting
 subtitle: Your opinion for a great conference!
 ---
 
+import { Image } from "astro:assets";
+import voteOptions from "../images/voting.png";
+
 # Community Voting
 
 Welcome to EuroPython Community Voting! We want feedback about what YOU would
@@ -20,7 +23,7 @@ from Wednesday, 5 February 23:00:00 UTC
 
 until Monday, 17 February 23:59:59 UTC
 
-<ButtonLink href="https://voting.europython.eu">Cast your votes now!</ButtonLink>
+<ButtonLink url="https://voting.europython.eu">Cast your votes now!</ButtonLink>
 </div>
 
 
@@ -67,14 +70,7 @@ to receive a new confirmation link.
 
 For each submission, you can choose only one of four options
 
-<div style={{textAlign: "center", marginBottom: 8}}>
-<Button>Must see</Button>
-<Button>Want to see</Button>
-</div>
-<div style={{textAlign: "center", marginBottom: 8}}>
-<Button>Maybe</Button>
-<Button>Not interested</Button>
-</div>
+<Image src={voteOptions} alt="Vote Options" width="1200" class="w-full h-auto border-4 border-white rounded-lg shadow-lg" />
 
 - Your vote for each submission is automatically saved, but you can change it
   at any time before the voting phase ends.
@@ -93,9 +89,12 @@ programme team who curate and are responsible for the final programme, but one
 of the major factors upon which they rely, will be the preferences of the
 community through this voting process.
 
-<div style={{textAlign: "center", marginBottom: 10}}>
-<ButtonLink href="https://voting.europython.eu">Go to the community voting</ButtonLink>
-</div>
+<ButtonLink
+  url="https://voting.europython.eu"
+  className="flex justify-center mb-10"
+>
+  Go to the community voting
+</ButtonLink>
 
 
 **[Subscribe to our newsletter](https://blog.europython.eu/#/portal/signup)**
