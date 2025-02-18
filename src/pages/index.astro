@@ -25,15 +25,7 @@ deadlines = deadlines
   title="EuroPython 2025 | July 14th-20th 2025 | Prague, Czech Republic & Remote"
   description="EuroPython is the largest Python conference in Europe. We are looking forward to seeing you in Prague, Czech Republic & Remote from July 14th-20th 2025."
 >
-  <Fullbleed>
-    <Hero />
-  </Fullbleed>
-
-  <CardContainer>
-    {deadlines.map((deadline) => <DeadlineCard id={deadline.slug} />)}
-  </CardContainer>
-
-  <div class="mt-40 px-6 pb-40 overflow-visible">
+  <div class="mt-20 px-6 pb-40 overflow-visible">
     <HeroWithCTA>
       <Title className="mb-2">
         {intro.frontmatter.title}
@@ -51,7 +43,16 @@ deadlines = deadlines
     </HeroWithCTA>
   </div>
 
-  <div class="mb-40">
+  <CardContainer>
+    {deadlines.map((deadline) => <DeadlineCard id={deadline.slug} />)}
+  </CardContainer>
+
+  <CardContainer>
+    {deadlines.map((deadline) => <DeadlineCard id={deadline.slug} />)}
+  </CardContainer>
+
+
+  <div class="mt-40 mb-40">
     <Prague title={venue.frontmatter.title}>
       <venue.Content />
   </div>

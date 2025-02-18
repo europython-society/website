@@ -1,12 +1,11 @@
 ---
-title: EuroPython Prague, You're invited!
+title: EuroPython is back in Prague for 2025
 ---
 
-We are excited to welcome you back to Prague once again for EuroPython 2025!
-This is the 24th edition of EuroPython, the oldest and longest-running
-volunteer-led Python programming conference on the planet! Join us in July in
-the vibrant Bohemian city Prague. We'll be together, celebrating our shared
-passion for Python and its community!
+- 1500 partcipants
+- 200 sessions
+- 200 speakers
+- Social events
 
 A week of all things Python:
 
