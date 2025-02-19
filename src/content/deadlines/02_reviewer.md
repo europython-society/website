@@ -10,4 +10,4 @@ image: mentorship1.jpg
 <!-- Join the team to review talk proposals! **YOUR** feedback helps us create a
 diverse and high-quality programme. -->
 
-The review period is over. Big thanks to all our reviewers!
+The review period is over. Heartfelt **THANKS** to all our reviewers!
