@@ -3,7 +3,7 @@
 # =========================
 VPS_USER  ?= static_content_user
 VPS_HOST  ?= static.europython.eu
-VPS_PROD_PATH  ?= /home/static_content_user/content/europython_websites/ep2025
+VPS_PROD_PATH  ?= /home/static_content_user/content/europython_websites/ep2024
 VPS_PREVIEW_PATH  ?= /home/static_content_user/content/previews
 REMOTE_CMD=ssh $(VPS_USER)@$(VPS_HOST)
 
