@@ -1,69 +1,73 @@
 {
-  "header": [
-    {
-      "name": "Programme",
-      "items": [
+    "header": [
         {
-          "name": "Tracks",
-          "path": "/programme/tracks"
+            "name": "Programme",
+            "items": [
+                {
+                    "name": "Tracks",
+                    "path": "/programme/tracks"
+                },
+                {
+                    "name": "Selection Process",
+                    "path": "/programme/selection"
+                },
+                {
+                    "name": "Community Voting",
+                    "path": "/programme/voting"
+                },
+                {
+                    "name": "Speaker Mentorship",
+                    "path": "/programme/mentorship"
+                },
+                {
+                    "name": "C API Summit",
+                    "path": "/programme/c-api-summit"
+                },
+                {
+                    "name": "WebAssembly Summit",
+                    "path": "/programme/wasm-summit"
+                }
+            ]
         },
         {
-          "name": "Selection Process",
-          "path": "/programme/selection"
+            "name": "Prague & Venue",
+            "items": [
+                {
+                    "name": "Around Prague & PCC",
+                    "path": "/where"
+                },
+                {
+                    "name": "Exploring Prague",
+                    "path": "/explore"
+                }
+            ]
         },
         {
-          "name": "Community Voting",
-          "path": "/programme/voting"
-        },
-        {
-          "name": "Speaker Mentorship",
-          "path": "/programme/mentorship"
-        },
-        {
-          "name": "C API Summit",
-          "path": "/programme/c-api-summit"
+            "name": "Info & Support",
+            "items": [
+                {
+                    "name": "FAQ",
+                    "path": "/faq"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name": "Prague & Venue",
-      "items": [
+    ],
+    "footer": [
         {
-          "name": "Around Prague & PCC",
-          "path": "/where"
+            "name": "2024 Photos",
+            "path": "https://ep2024.europython.eu/photos"
         },
         {
-          "name": "Exploring Prague",
-          "path": "/explore"
-        }
-      ]
-    },
-    {
-      "name": "Info & Support",
-      "items": [
+            "name": "Contacts",
+            "path": "/contacts"
+        },
         {
-          "name": "FAQ",
-          "path": "/faq"
+            "name": "Terms",
+            "path": "/terms"
+        },
+        {
+            "name": "Privacy Policy",
+            "path": "https://www.europython-society.org/privacy/"
         }
-      ]
-    }
-  ],
-  "footer": [
-    {
-      "name": "2024 Photos",
-      "path": "https://ep2024.europython.eu/photos"
-    },
-    {
-      "name": "Contacts",
-      "path": "/contacts"
-    },
-    {
-      "name": "Terms",
-      "path": "/terms"
-    },
-    {
-      "name": "Privacy Policy",
-      "path": "https://www.europython-society.org/privacy/"
-    }
-  ]
+    ]
 }
