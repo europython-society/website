@@ -59,7 +59,7 @@ preview:
 
 
 ifeq ($(FORCE_DEPLOY), true)
-deploy: RELEASES_DIR = $(VPS_PROD_PATH)/$(SAFE_BRANCH)/releases
+deploy: RELEASES_DIR = $(VPS_PROD_PATH)/releases
 deploy: TARGET = $(RELEASES_DIR)/$(TIMESTAMP)
 deploy:
 	@echo "\n\n**** Deploying branch '$(BRANCH)' (safe: $(SAFE_BRANCH)) to $(TARGET)...\n\n"
