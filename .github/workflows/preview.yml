@@ -1,0 +1,102 @@
+name: Preview
+
+on:
+  pull_request:
+
+jobs:
+  preview:
+    name: Run preview
+    runs-on: ubuntu-latest
+    env:
+      PREVIEW_HOSTNAME: ep-preview.click
+      GITHUB_BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set timestamp for build/deploy
+        run: echo "TIMESTAMP=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Build the website
+        run: make build
+
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Get current branch name
+        run: |
+          BRANCH_NAME=$(make safe_branch BRANCH=$GITHUB_BRANCH_NAME)
+          echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
+
+      - name: ssh keyscan
+        run: ssh-keyscan "static.europython.eu" > ~/.ssh/known_hosts
+
+      - name: Upload preview
+        run: make preview BRANCH=$GITHUB_BRANCH_NAME
+
+      - name: Update PR Comment
+        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log("Hello world!");
+            const pr_id = ${{ github.event.number }};
+            console.log("PR Id %d", pr_id);
+
+            comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number(pr_id)
+            })
+
+            const preview_identifier = "# Preview available"
+
+            let comment_id = null;
+            comments.forEach(comment => {
+              if(comment.body.indexOf(preview_identifier) >= 0) {
+                comment_id = comment.id;
+              }
+            });
+
+            const branch_name = process.env.BRANCH_NAME;
+            const url = "https://" + branch_name + "." + process.env.PREVIEW_HOSTNAME;
+            const timestamp = new Date().toISOString();
+            const header = "\n|Key|Value|\n|---|---|\n"
+            const body = preview_identifier + header + "|url|" + url + "|\n|last update|" + timestamp + "|";
+
+            if(comment_id > 0) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: comment_id,
+                body: body
+              });
+
+            } else {
+
+              await github.rest.issues.createComment({
+                issue_number: Number(pr_id),
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: body
+              });
+            }

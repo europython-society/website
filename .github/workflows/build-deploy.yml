@@ -1,0 +1,47 @@
+name: Deploy to Server
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - ep2024
+      - ep2025
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set timestamp for build/deploy
+        run: echo "TIMESTAMP=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Build the website
+        run: make build
+
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: ssh keyscan
+        run: ssh-keyscan "static.europython.eu" > ~/.ssh/known_hosts
+
+      - name: Deploy to server
+        run: make deploy FORCE_DEPLOY=true
