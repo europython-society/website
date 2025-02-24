@@ -17,9 +17,9 @@ export function wrapInArticles() {
 
 const hasOnlyOneImage = (node: Node): node is Parent => {
   return (
-    matches("paragraph", node) &&
+    matches("paragraph", node as any) &&
     (node as Parent).children.length == 1 &&
-    matches("image", (node as Parent).children[0])
+    matches("image", (node as any).children[0])
   );
 };
 
@@ -47,7 +47,7 @@ function transform(tree: Node) {
   for (let i = 0; i < (tree as Parent).children.length; i++) {
     const child = (tree as Parent).children[i];
 
-    if (matches("thematicBreak", child) || shouldNotWrap(child)) {
+    if (matches("thematicBreak", child as any) || shouldNotWrap(child)) {
       currentArticle = null;
       children.push(child);
     } else if (hasOnlyOneImage(child)) {

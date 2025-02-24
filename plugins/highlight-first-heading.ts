@@ -7,7 +7,7 @@ export function highlightFirstHeading() {
 }
 
 function transform(tree: Node) {
-  const heading = select("heading", tree);
+  const heading = select("heading", tree as any);
 
   if (heading) {
     heading.data = heading.data || {};
