@@ -40,7 +40,7 @@ export default {
       "sponsor-diamond": "#568497",
       "sponsor-platinum": "#6b6c6e",
       "sponsor-gold": "#f5c251",
-      "sponsor-silver": "#707172",
+      "sponsor-silver": "#C0C0C0",
       "sponsor-bronze": "#6e6151",
       "sponsor-patron": "#a11217",
 
