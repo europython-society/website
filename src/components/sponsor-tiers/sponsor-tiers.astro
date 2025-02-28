@@ -130,13 +130,13 @@ const formatPrice = (price: number | string) => {
         <div class="h-[160px]">
           <Ribbon
             className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
-            style={{ zIndex: "-1" }}
+             style={{ zIndex: "-1", top: "-55px" }}
           />
           <Title level={3} className="mt-0 !mb-2">
             {tier.title}
           </Title>
           <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
-          <div class="text-xl">
+          <div class="text-xl mt-4">
             {tier.totalSlots ? (
               <>
                 <span>{tier.totalSlots}</span> slot{tier.totalSlots == 1 ? "" : "s"}{" "}
@@ -168,7 +168,7 @@ const formatPrice = (price: number | string) => {
         <div class="h-[160px]">
           <Ribbon
             className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
-            style={{ zIndex: "-1" }}
+            style={{ zIndex: "-1", top: "-55px"}}
           />
           <Title level={3} className="mt-0 !mb-2">
             {tier.title}
@@ -206,7 +206,7 @@ const formatPrice = (price: number | string) => {
         <div class="h-[160px]">
           <Ribbon
             className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
-            style={{ zIndex: "-1" }}
+            style={{ zIndex: "-1", top: "-55px" }}
           />
           <Title level={3} className="mt-0 !mb-2">
             {tier.title}
@@ -243,6 +243,7 @@ const formatPrice = (price: number | string) => {
     margin-left: 50%;
     transform: translateX(-50%);
     position: relative;
+    padding: 0 25px;
   }
 
   @media (max-width: 768px) {
