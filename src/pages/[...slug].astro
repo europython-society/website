@@ -10,6 +10,8 @@ import { MapSprints } from "../components//map-for-sprints";
 import { YouTube } from "@astro-community/astro-embed-youtube";
 import BenefitsList from "../components/benefits-list/benefits-list.astro";
 import BenefitItem from "../components/benefits-list/benefit-item.astro";
+import HighlightCard from "../components/highlight-list/highlight-card.astro";
+import HighlightItem from "../components/highlight-list/highlight-item.astro";
 import { Note } from "../components/note";
 import SponsorTiers from "../components/sponsor-tiers/sponsor-tiers.astro";
 
@@ -41,6 +43,8 @@ const description = post.data.subtitle;
         YouTube,
         BenefitItem,
         BenefitsList,
+        HighlightCard,
+        HighlightItem,
         Note,
         SponsorTiers,
         hr: Separator,
