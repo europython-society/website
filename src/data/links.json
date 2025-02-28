@@ -22,6 +22,10 @@
         {
           "name": "C API Summit",
           "path": "/programme/c-api-summit"
+        },
+        {
+          "name": "Rust Summit",
+          "path": "/programme/rust-summit"
         }
       ]
     },
