@@ -162,7 +162,13 @@ const formatPrice = (price: number | string) => {
   </div>
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 md:gap-2 lg:gap-10 gap-10">
 
-    {tiers.filter(tier => tier.title === "Silver" || tier.title === "Platinum" || tier.title === "Gold").map((tier) => (
+  {tiers
+    .filter(tier => tier.title === "Silver" || tier.title === "Platinum" || tier.title === "Gold")
+    .sort((a, b) => {
+      const order = { "Silver": 1, "Platinum": 2, "Gold": 3 };
+      return order[a.title] - order[b.title];
+    })
+    .map((tier) => (
       <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
         <div class="h-[160px]">
           <Ribbon
@@ -201,7 +207,13 @@ const formatPrice = (price: number | string) => {
     <p class="text-xl mt-2">Unique sponsorship tiers designed to make your company stand out from the rest</p>
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
-    {tiers.filter(tier => tier.title === "Diamond" || tier.title === "Keystone").map((tier) => (
+    {tiers.filter(tier => tier.title === "Diamond" || tier.title === "Keystone")
+    .sort((a, b) => {
+      const order = { "Diamond": 1, "Keystone": 2};
+      return order[a.title] - order[b.title];
+    })    
+    
+    .map((tier) => (
       <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
         <div class="h-[160px]">
           <Ribbon
@@ -239,7 +251,12 @@ const formatPrice = (price: number | string) => {
     <p class="text-xl mt-2">Perfect opportunity for companies with more modest budgets</p>
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
-    {tiers.filter(tier => tier.title === "Patron" || tier.title === "Bronze").map((tier) => (
+    {tiers.filter(tier => tier.title === "Patron" || tier.title === "Bronze")
+    .sort((a, b) => {
+      const order = { "Patron": 1, "Bronze": 2};
+      return order[a.title] - order[b.title];
+    })    
+    .map((tier) => (
       <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
         <div class="h-[160px]">
           <Ribbon
