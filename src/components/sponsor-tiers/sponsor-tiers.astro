@@ -124,7 +124,8 @@ const formatPrice = (price: number | string) => {
     <h2 class="text-3xl font-bold">Most Popular Options</h2>
     <p class="text-xl mt-2">Ideal for companies that seek a high level of brand visibility and interaction with participants:</p>
   </div>
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 md:gap-2 lg:gap-10 gap-10">
+
     {tiers.filter(tier => tier.title === "Silver" || tier.title === "Platinum" || tier.title === "Gold").map((tier) => (
       <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
         <div class="h-[160px]">
@@ -243,15 +244,14 @@ const formatPrice = (price: number | string) => {
     margin-left: 50%;
     transform: translateX(-50%);
     position: relative;
-    padding: 0 25px;
+    padding: 0 40px;
   }
 
   @media (max-width: 768px) {
     .sponsor-tiers-container {
-      width: 100%; 
-      margin-left: 0;
-      transform: none;
+      width: 100%;
+      padding: 0 10px; 
+      position: relative;
     }
   }
-
 </style>
