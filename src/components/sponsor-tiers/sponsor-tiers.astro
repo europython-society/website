@@ -1,6 +1,7 @@
 ---
 import { Title } from "../typography/title";
 import Ribbon from "./ribbon.astro";
+import ButtonLink from "../button-link/button-link.astro"
 
 interface SponsorTierProps {
   title: string;
@@ -169,7 +170,7 @@ const formatPrice = (price: number | string) => {
       return order[a.title] - order[b.title];
     })
     .map((tier) => (
-      <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
+      <div class="bg-white text-black rounded-2xl p-6 pb-20 relative not-prose z-0">
         <div class="h-[160px]">
           <Ribbon
             className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
@@ -198,6 +199,10 @@ const formatPrice = (price: number | string) => {
             
           ))}
         </ul>
+      <div class="absolute bottom-4 right-4">
+        <ButtonLink url="undefined">Sign Up Now!</ButtonLink>
+      </div>
+
       </div>
     ))}
   </div>
@@ -214,7 +219,7 @@ const formatPrice = (price: number | string) => {
     })    
     
     .map((tier) => (
-      <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
+      <div class="bg-white text-black rounded-2xl p-6 pb-20 relative not-prose z-0">
         <div class="h-[160px]">
           <Ribbon
             className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
@@ -242,6 +247,9 @@ const formatPrice = (price: number | string) => {
             <li set:html={`✔️ ${feature}`}></li>
           ))}
         </ul>
+      <div class="absolute bottom-4 right-4">
+        <ButtonLink url="undefined">Sign Up Now!</ButtonLink>
+      </div>        
       </div>
     ))}
   </div>
@@ -257,7 +265,7 @@ const formatPrice = (price: number | string) => {
       return order[a.title] - order[b.title];
     })    
     .map((tier) => (
-      <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
+      <div class="bg-white text-black rounded-2xl p-6 pb-20 relative not-prose z-0">
         <div class="h-[160px]">
           <Ribbon
             className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
@@ -285,6 +293,9 @@ const formatPrice = (price: number | string) => {
             <li set:html={`✔️ ${feature}`}></li>
           ))}
         </ul>
+      <div class="absolute bottom-4 right-4">
+        <ButtonLink url="undefined">Sign Up Now!</ButtonLink>
+      </div>        
       </div>
     ))}
   </div>
