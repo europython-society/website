@@ -12,7 +12,7 @@ interface SponsorTierProps {
 const tiers: SponsorTierProps[] = [
   {
     title: "Keystone",
-    totalSlots: 1,
+    totalSlots: 1/1,
     price: "Please ask",
     features: [
       "Keynote (plenary) room named after your company",
@@ -29,8 +29,8 @@ const tiers: SponsorTierProps[] = [
   },
   {
     title: "Diamond",
-    totalSlots: 2,
-    price: undefined,
+    totalSlots: "2/2",
+    price: 30_000,
     features: [
       "30 sqm booth in exhibit hall",
       "8 complimentary session passes",
@@ -43,8 +43,8 @@ const tiers: SponsorTierProps[] = [
   },
   {
     title: "Platinum",
-    totalSlots: 3,
-    price: undefined,
+    totalSlots: "4/4",
+    price: 18_000,
     features: [
       "16 sqm booth in exhibit hall",
       "6 complimentary session passes",
@@ -55,23 +55,11 @@ const tiers: SponsorTierProps[] = [
       "And more!",
     ],
   },
-  {
-    title: "Platinum X",
-    totalSlots: 3,
-    price: undefined,
-    features: [
-      "6 complimentary session passes",
-      "Logo on banners, videos, website, signage",
-      "PDF brochure on virtual swag webpage",
-      "Access to recruiting session",
-      "1 sponsored talk (30 minutes)",
-      "And more!",
-    ],
-  },
+
   {
     title: "Gold",
-    price: undefined,
-    totalSlots: "limited",
+    price: 9_500,
+    totalSlots: "10/10",
     features: [
       "9 sqm booth in exhibit hall",
       "3 complimentary session passes",
@@ -81,22 +69,11 @@ const tiers: SponsorTierProps[] = [
       "And more!",
     ],
   },
-  {
-    title: "Gold X",
-    price: undefined,
-    totalSlots: "limited",
-    features: [
-      "3 complimentary session passes",
-      "Logo on banners, videos, website, signage",
-      "PDF brochure on virtual swag webpage",
-      "Access to recruiting session",
-      "And more!",
-    ],
-  },
+
   {
     title: "Silver",
-    price: undefined,
-    totalSlots: "limited",
+    price: 6_500,
+    totalSlots: "10/10",
     features: [
       "6 sqm booth in exhibit hall",
       "2 complimentary session passes",
@@ -106,13 +83,13 @@ const tiers: SponsorTierProps[] = [
   },
   {
     title: "Bronze",
-    price: undefined,
+    price: 2_000,
     totalSlots: "unlimited",
     features: ["Logo & recruiting ad on EuroPython website and more!"],
   },
   {
     title: "Patron",
-    price: undefined,
+    price: 1_000,
     totalSlots: "unlimited",
     features: ["Logo on EuroPython website, welcome tweet and more!"],
   },
@@ -123,10 +100,7 @@ const getRibbonClass = (title: string) => {
     Keystone: "text-sponsor-keystone",
     Diamond: "text-sponsor-diamond",
     Platinum: "text-sponsor-platinum",
-    "Platinum X": "text-sponsor-platinum",
     Gold: "text-sponsor-gold",
-    "Gold X": "text-sponsor-gold",
-
     Silver: "text-sponsor-silver",
     Bronze: "text-sponsor-bronze",
     Patron: "text-sponsor-patron",
@@ -145,20 +119,22 @@ const formatPrice = (price: number | string) => {
 };
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
-  {
-    tiers.map((tier) => (
+<div class="sponsor-tiers-container">
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold">Most Popular Options</h2>
+    <p class="text-xl mt-2">Ideal for companies that seek a high level of brand visibility and interaction with participants:</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+    {tiers.filter(tier => tier.title === "Silver" || tier.title === "Platinum" || tier.title === "Gold").map((tier) => (
       <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
         <div class="h-[160px]">
           <Ribbon
             className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
             style={{ zIndex: "-1" }}
           />
-
           <Title level={3} className="mt-0 !mb-2">
             {tier.title}
           </Title>
-
           <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
           <div class="text-xl">
             {tier.totalSlots ? (
@@ -179,6 +155,102 @@ const formatPrice = (price: number | string) => {
           ))}
         </ul>
       </div>
-    ))
-  }
+    ))}
+  </div>
+
+  <div class="text-center mb-8 mt-16">
+    <h2 class="text-3xl font-bold">Major Supporters</h2>
+    <p class="text-xl mt-2">Unique sponsorship tiers that will make your company stand out from the rest:</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+    {tiers.filter(tier => tier.title === "Diamond" || tier.title === "Keystone").map((tier) => (
+      <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
+        <div class="h-[160px]">
+          <Ribbon
+            className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
+            style={{ zIndex: "-1" }}
+          />
+          <Title level={3} className="mt-0 !mb-2">
+            {tier.title}
+          </Title>
+          <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
+          <div class="text-xl">
+            {tier.totalSlots ? (
+              <>
+                <span>{tier.totalSlots}</span> slot{tier.totalSlots == 1 ? "" : "s"}{" "}
+                available
+              </>
+            ) : (
+              <>No slot available</>
+            )}
+          </div>
+        </div>
+
+        <p class="font-bold text-base">This tier includes:</p>
+        <ul class="text-base">
+          {tier.features.map((feature) => (
+            <li>✔️ {feature}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  <div class="text-center mb-8 mt-16">
+    <h2 class="text-3xl font-bold">Starter Tiers</h2>
+    <p class="text-xl mt-2">Perfect opportunity for companies with smaller budgets:</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+    {tiers.filter(tier => tier.title === "Patron" || tier.title === "Bronze").map((tier) => (
+      <div class="bg-white text-black rounded-2xl p-6 relative not-prose z-0">
+        <div class="h-[160px]">
+          <Ribbon
+            className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
+            style={{ zIndex: "-1" }}
+          />
+          <Title level={3} className="mt-0 !mb-2">
+            {tier.title}
+          </Title>
+          <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
+          <div class="text-xl">
+            {tier.totalSlots ? (
+              <>
+                <span>{tier.totalSlots}</span> slot{tier.totalSlots == 1 ? "" : "s"}{" "}
+                available
+              </>
+            ) : (
+              <>No slot available</>
+            )}
+          </div>
+        </div>
+
+        <p class="font-bold text-base">This tier includes:</p>
+        <ul class="text-base">
+          {tier.features.map((feature) => (
+            <li>✔️ {feature}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
 </div>
+
+
+<style is:global>
+  .sponsor-tiers-container {
+    width: 100vw;
+    max-width: 1000px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    .sponsor-tiers-container {
+      width: 100%; 
+      margin-left: 0;
+      transform: none;
+    }
+  }
+
+</style>
