@@ -16,9 +16,9 @@ const tiers: SponsorTierProps[] = [
     totalSlots: 1/1,
     price: "Custom Pricing",
     features: [
-  `<span style="font-size: 1.2rem; margin-top: 5;">Everything in the Diamond tier, plus <strong>white glove bespoke customisation tailored specifically to your needs</strong>.</span><br><br>`, 
-  
-  `<span style="font-size: 1.2rem; margin-top: 5;">We’re happy to walk you through <strong>every step</strong> to create a sponsorship experience that’s <strong>uniquely yours</strong>, with <strong>full support to bring your vision to life</strong>.</span>`,    
+  `<span style="font-size: 1.2rem; margin-top: 5;">Everything in the Diamond tier, plus <strong>white glove bespoke customisation tailored specifically to your needs</strong>.</span><br><br>`,
+
+  `<span style="font-size: 1.2rem; margin-top: 5;">We’re happy to walk you through <strong>every step</strong> to create a sponsorship experience that’s <strong>uniquely yours</strong>, with <strong>full support to bring your vision to life</strong>.</span>`,
   ],
   },
   {
@@ -45,7 +45,7 @@ features: [
       "Recruiting Session/Talent Track access",
       "Media corner access",
       "Published interview on YouTube channel",
-      "1 custom YouTube short", 
+      "1 custom YouTube short",
       "Logo on <strong>lecterns</strong>, livestreams, recordings, banners, website, signage",
       "1 repost on EuroPython socials (35k total reach)",
       "Welcome post on EuroPython social media",
@@ -69,7 +69,7 @@ features: [
       "Recruiting Session/Talent Track access",
       "<strong>Media corner access</strong>",
       "<strong>Published interview on YouTube channel</strong>",
-      "<strong>1 custom YouTube short</strong>", 
+      "<strong>1 custom YouTube short</strong>",
       "Logo on <strong>livestreams</strong>, recordings, banners, website, signage",
       "1 repost on EuroPython socials (35k total reach)",
       "Welcome post on EuroPython social media",
@@ -85,7 +85,7 @@ features: [
       "<strong>3</strong> conference tickets (€1500 value)",
       "<strong>3</strong> remote tickets (€450 value)",
       "Video ad(s) (silent) on venue digital signage",
-      "Undefined job postings on EuroPython blog",      
+      "Undefined job postings on EuroPython blog",
       "5 job postings on website",
       "Video ad(s) on livestreams",
       "<strong>Recruiting Session/Talent Track access</strong>",
@@ -103,8 +103,8 @@ features: [
       "Small booth in exhibit hall",
       "2 conference tickets (€1000 value)",
       "2 remote tickets (€300 value)",
-      "Video ad(s) (silent) on venue digital signage",      
-      "2 job postings on EuroPython blog",    
+      "Video ad(s) (silent) on venue digital signage",
+      "2 job postings on EuroPython blog",
       "1 job posting on website",
       "Logo on website and signage",
       "Welcome post on EuroPython social media",
@@ -126,7 +126,7 @@ features: [
     price: 1_000,
     totalSlots: "unlimited",
    features: [
-      "1 remote ticket (€150 value)",      
+      "1 remote ticket (€150 value)",
       "Logo on website and signage",
       "Welcome post on EuroPython social media",
     ],  },
@@ -196,7 +196,7 @@ const formatPrice = (price: number | string) => {
         <ul class="text-base">
           {tier.features.map((feature) => (
             <li set:html={`✔️ ${feature}`}></li>
-            
+
           ))}
         </ul>
       <div class="absolute bottom-4 right-4">
@@ -216,8 +216,8 @@ const formatPrice = (price: number | string) => {
     .sort((a, b) => {
       const order = { "Diamond": 1, "Keystone": 2};
       return order[a.title] - order[b.title];
-    })    
-    
+    })
+
     .map((tier) => (
       <div class="bg-white text-black rounded-2xl p-6 pb-20 relative not-prose z-0">
         <div class="h-[160px]">
@@ -249,7 +249,7 @@ const formatPrice = (price: number | string) => {
         </ul>
       <div class="absolute bottom-4 right-4">
         <ButtonLink url="undefined">Sign Up Now!</ButtonLink>
-      </div>        
+      </div>
       </div>
     ))}
   </div>
@@ -263,7 +263,7 @@ const formatPrice = (price: number | string) => {
     .sort((a, b) => {
       const order = { "Patron": 1, "Bronze": 2};
       return order[a.title] - order[b.title];
-    })    
+    })
     .map((tier) => (
       <div class="bg-white text-black rounded-2xl p-6 pb-20 relative not-prose z-0">
         <div class="h-[160px]">
@@ -295,7 +295,7 @@ const formatPrice = (price: number | string) => {
         </ul>
       <div class="absolute bottom-4 right-4">
         <ButtonLink url="undefined">Sign Up Now!</ButtonLink>
-      </div>        
+      </div>
       </div>
     ))}
   </div>
@@ -315,7 +315,7 @@ const formatPrice = (price: number | string) => {
   @media (max-width: 768px) {
     .sponsor-tiers-container {
       width: 100%;
-      padding: 0 10px; 
+      padding: 0 10px;
       position: relative;
     }
   }
