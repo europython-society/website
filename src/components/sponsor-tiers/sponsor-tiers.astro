@@ -3,6 +3,12 @@ import { Title } from "../typography/title";
 import Ribbon from "./ribbon.astro";
 import ButtonLink from "../button-link/button-link.astro"
 
+interface Props {
+  signupLink: string;
+}
+
+const { signupLink = "#" } = Astro.props;
+
 interface SponsorTierProps {
   title: string;
   totalSlots?: number | null | string;
@@ -200,7 +206,7 @@ const formatPrice = (price: number | string) => {
           ))}
         </ul>
       <div class="absolute bottom-4 right-4">
-        <ButtonLink url="undefined">Sign Up Now!</ButtonLink>
+        <ButtonLink url={signupLink}>Sign Up Now!</ButtonLink>
       </div>
 
       </div>
@@ -248,8 +254,8 @@ const formatPrice = (price: number | string) => {
           ))}
         </ul>
       <div class="absolute bottom-4 right-4">
-        <ButtonLink url="undefined">Sign Up Now!</ButtonLink>
-      </div>
+        <ButtonLink url={signupLink}>Sign Up Now!</ButtonLink>
+      </div>        
       </div>
     ))}
   </div>
@@ -294,8 +300,8 @@ const formatPrice = (price: number | string) => {
           ))}
         </ul>
       <div class="absolute bottom-4 right-4">
-        <ButtonLink url="undefined">Sign Up Now!</ButtonLink>
-      </div>
+        <ButtonLink url={signupLink}>Sign Up Now!</ButtonLink>
+      </div>        
       </div>
     ))}
   </div>
