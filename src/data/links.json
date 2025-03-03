@@ -24,6 +24,10 @@
           "path": "/programme/c-api-summit"
         },
         {
+          "name": "WebAssembly Summit",
+          "path": "/programme/wasm-summit"
+        },
+        {
           "name": "Rust Summit",
           "path": "/programme/rust-summit"
         }
