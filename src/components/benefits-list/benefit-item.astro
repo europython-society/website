@@ -23,12 +23,12 @@ const Icon = {
 }[icon];
 ---
 
-<div class="mb-4 max-w-full">
+<div class="mb-8 md:mb-4 max-w-full">
   <div class="flex items-center gap-3 mb-1">
     <Icon class="w-5 h-auto m-0 flex-shrink-0" />
     <div class="text-xl font-extrabold">{title}</div>
   </div>
-  <div class="mt-1">
+  <div class="mt-1 leading-relaxed pl-8 md:pl-0">
     <slot />
   </div>
 </div>
