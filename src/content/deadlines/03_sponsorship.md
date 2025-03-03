@@ -1,9 +1,9 @@
 ---
-title: Become a Sponsor
-subtitle: Support the Community
+title: Call for Sponsors
+subtitle: Sign Up Now
 
 url: /sponsorship/sponsor/
-image: ep-sponsor-exhibit.jpg
+image: ep-sponsors.png
 ---
 
 Gain visibility and connect with **1,500 Pythonistas** at the world’s oldest
