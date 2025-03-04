@@ -1,0 +1,272 @@
+---
+title: test
+subtitle: this is a non-exhaustive page to demonstrate the use of some components and styling. It is recommended that when new components are introduced, how they are used gets added to the test page. 
+---
+
+import { Image } from 'astro:assets';
+import pragueImage from './images/prague.jpg';
+
+<head>
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+
+# h1 Heading
+<h1>HTML h1 heading</h1>
+
+## h2 Heading
+<h2>HTML h2 heading</h2>
+
+### h3 Heading
+<h3>HTML h3 heading</h3>
+
+#### h4 Heading
+<h4>HTML h4 heading</h4>
+
+##### h5 Heading
+<h5>HTML h5 heading</h5>
+
+###### h6 Heading
+<h6>HTML h6 heading</h6>
+
+## Horizontal Rules
+---
+***
+___
+
+## Typographic Replacements
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+test.. test... test..... test?..... test!....
+
+!!!!!! ???? ,, -- ---
+
+"Smartypants, double quotes" and 'single quotes'
+
+## Emphasis
+**This is bold text**
+
+_This is italic text_
+
+<u>This is underlined text</u>
+
+~~Strikethrough~~
+
+<span class="text-2xl font-bold text-center block">The text becomes bigger and centred for immediate attention.</span>
+
+### Note
+<Note> You could also use the Note component to call for attention. </Note>
+
+
+## Blockquotes
+> Blockquotes can also be nested...
+>
+> > ...by using additional greater-than signs right next to each other...
+> >
+> > > ...or with spaces between arrows.
+
+## Lists
+
+### Unordered
+- Create a list by starting a line with `+`, `-`, or `*`
+- Sub-lists are made by indenting 2 spaces:
+  - Marker character change forces new list start:
+    + Ac tristique libero volutpat at
+    * Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
+- Very easy!
+
+### Ordered
+1. Cocker Spaniels
+2. Greyhounds
+3. Cairn Terriers
+4. You can use sequential numbers...
+5. ...or keep all the numbers as `1.`
+
+Start numbering with offset:
+57. Westies
+1. Scotties
+
+### Task Lists
+- [x] Adopt a dog
+- [ ] Walk the dog
+- [ ] Achieve happiness
+
+
+## Code
+
+### Inline code
+Inline `code` doesn't currently work as intended.
+
+### Block code
+
+```
+Sample text here...
+```
+
+Syntax highlighting
+
+```python
+def bark():
+    return "Woof!"
+
+def main():
+    print("What does the dogs say?")
+    print("Dogs: ", bark())
+    
+main()
+
+```
+
+## Subscript / Superscript
+
+- 19<sup>th</sup>
+- H<sub>2</sub>O
+
+## Keyboard
+<kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd>
+
+## Abbreviate
+<abbr title="Graphics Interchange Format">GIF</abbr>
+
+## Highlight
+All your <mark>dogs</mark> are belong to us!
+
+## Footnotes
+
+Footnote 1 link[^first].
+
+Footnote 2 link[^second].
+
+Duplicated footnote reference[^second].
+
+[^first]: Footnote **can have markup**
+
+    and multiple paragraphs.
+
+[^second]: Footnote text.
+
+## Tables
+
+{/*Simple tables*/}
+
+
+Centre aligned columns
+| Info      | Description      |
+| :-------: | :---------------:|
+| Breed     | Cocker Spaniels  |
+| Size      | medium           |
+| Character | velco            |
+
+Right aligned columns
+
+| Info      | Description           |
+| --------: | --------------------: |
+| Breed     | Beagles               |
+| Size      | medium                |
+| Character | hunger strikes always |
+
+Left aligned columns
+
+| Info      | Description           |
+| :-------- | :-------------------: |
+| Breed     | Deerhounds            |
+| Size      | Large                 |
+| Character | gentle giant              |
+
+{/*Tables with more styling options*/}
+
+<table class="w-full border-2 border-black border-separate mb-5">
+  <thead class="bg-gray-200">
+    <tr>
+      <th class="border-2 border-black p-3 text-left">Breed</th>
+      <th class="border-2 border-black p-3 text-center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border-2  p-3 text-center">Cocker Spaniel</td>
+      <td class="border-2  p-3">Loves cuddles, snacks, and shedding</td>
+    </tr>
+    <tr>
+      <td class="border-2 border-dashed border-blue-500 p-1 text-right">Beagle</td>
+      <td class="border-2 border-dashed border-blue-500 p-1 text-right">Expert in food, and not anything else</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="w-full border-2 border-black border-collapse mb-5">
+  <thead class="bg-gray-200">
+    <tr>
+      <th class="border-2 border-black p-3 text-left">Breed</th>
+      <th class="border-2 border-black p-3 text-center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td class="p-3 text-left">Deerhound</td>
+      <td class="p-3">while not zoomies: a couch potato</td>
+    </tr>
+    <tr>
+      <td class="border-2 p-3 text-center">Golden Retriever</td>
+      <td class="border-2">Fluffball of joy and fluff</td>
+    </tr>
+    <tr>
+      <td class="border-2 border-dotted p-3 text-left">French Bulldog</td>
+      <td class="border-2 border-dotted p-3">Snorts, snores, and snores</td>
+    </tr>
+  </tbody>
+</table>
+
+## Links
+
+[link text](https://random.dog/)
+
+## Email
+
+Auto converted mailto: info@europython.eu
+
+## Comments
+You will not see the following because they are in comments:
+{/*
+
+Barking up the right tree
+*/}
+
+## Images
+
+ <a href="https://www.europython-society.org/" target="_blank">
+    This image is public, stored in /public, so no import is needed
+    <img src="/img/eps-logo.png" alt="Logo of the EuroPython Society" width="400"/>
+  </a>
+
+ <a href="/where" target="_blank">
+    This image is internal, in /src, so import is needed
+    <Image src={pragueImage} alt="A bird sitting on a nest of eggs." width="400" class="h-auto border-4 border-white rounded-lg shadow-lg"/>
+</a>
+
+## Caption
+
+<Image
+  src="https://live.staticflickr.com/65535/53140703878_8d29805478_h.jpg"
+  alt="lalo, remote image"
+  width="400"
+  height="400"
+/>
+<figcaption>Hear from our CHO at EuroPython 2023</figcaption>
+
+## ButtonLinks
+<div class="text-center mb-10">
+    <ButtonLink url="https://forms.gle/4GTJjwZ1nHBGetM18">JOIN THE REVIEWER TEAM!</ButtonLink>
+</div>
+
+ <div class="text-center mt-10">
+
+    <ButtonLink disabled>Signup closed, no URL present</ButtonLink>
+</div>
+    
+<ButtonLink url="https://voting.europython.eu" className="flex justify-center mt-10 mb-10">Go to the community voting</ButtonLink>
+
+## YouTube
+<YouTube id="j5a0jTc9S10" alt="Mood lifter" />
