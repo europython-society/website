@@ -203,10 +203,12 @@ const formatPrice = (price: number | string) => {
         </div>
 
         <p class="font-bold text-base">This tier includes:</p>
-        <ul class="text-base">
+        <ul class="text-base list-none pl-0">
           {tier.features.map((feature) => (
-            <li set:html={`✔️ ${feature}`}></li>
-
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6">✔️</span>
+              <span set:html={feature}></span>
+            </li>
           ))}
         </ul>
       <div class="absolute bottom-4 right-4">
@@ -252,9 +254,12 @@ const formatPrice = (price: number | string) => {
         </div>
 
         <p class="font-bold text-base">This tier includes:</p>
-        <ul class="text-base">
+        <ul class="text-base list-none pl-0">
           {tier.features.map((feature) => (
-            <li set:html={`✔️ ${feature}`}></li>
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6">✔️</span>
+              <span set:html={feature}></span>
+            </li>
           ))}
         </ul>
       <div class="absolute bottom-4 right-4">
@@ -298,9 +303,12 @@ const formatPrice = (price: number | string) => {
         </div>
 
         <p class="font-bold text-base">This tier includes:</p>
-        <ul class="text-base">
+        <ul class="text-base list-none pl-0">
           {tier.features.map((feature) => (
-            <li set:html={`✔️ ${feature}`}></li>
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6">✔️</span>
+              <span set:html={feature}></span>
+            </li>
           ))}
         </ul>
       <div class="absolute bottom-4 right-4">
