@@ -20,7 +20,7 @@ You’ll find all the information you need to apply for such a grant below.
 
 <div className="finaid-sponsor">
   <a href="https://www.europython-society.org/" target="_blank">
-    <img src="/img/eps-logo-white.png" alt="Logo of the EuroPython Society" />
+    <img src="/img/eps-logo.png" alt="Logo of the EuroPython Society" />
   </a>
 </div>
 
