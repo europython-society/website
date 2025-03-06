@@ -51,7 +51,9 @@
       "items": [
         {
           "name": "FAQ",
-          "path": "/faq",
+          "path": "/faq"
+        },
+        {
           "name": "Financial Aid",
           "path": "/finaid"
         }
