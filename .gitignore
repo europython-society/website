@@ -138,3 +138,6 @@ storybook-static/
 # Sentry Auth Token
 .sentryclirc
 .astro
+
+# Generated static redirects
+generated/

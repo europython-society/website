@@ -3,9 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "prepare": "node scripts/generate-redirect-html.cjs && node scripts/create-static-redirects.cjs",
+    "dev": "concurrently --kill-others --success first --raw --signal SIGKILL \"nodemon --exitcrash -w src/data/redirects.json -e json -x \\\"pnpm prepare\\\"\" \"pnpm astro dev\"",
+    "build": "astro check && astro prepare && astro build",
     "start": "astro dev",
-    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write --plugin=prettier-plugin-astro ."
@@ -23,6 +24,7 @@
     "@types/react-dom": "^18.3.5",
     "astro": "^5.1.6",
     "astro-meta-tags": "^0.3.1",
+    "astro-public": "^0.1.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
@@ -37,8 +39,10 @@
     "typescript": "^5.7.3"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "prettier": "^3.4.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "nodemon": "^3.1.9"
   },
   "prettier": {
     "proseWrap": "always"
