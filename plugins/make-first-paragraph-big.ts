@@ -7,7 +7,7 @@ export function makeFirstParagraphBig() {
 }
 
 function transform(tree: Node) {
-  const paragraph = select("heading + paragraph", tree);
+  const paragraph = select("heading + paragraph", tree as any);
 
   if (paragraph) {
     paragraph.data = paragraph.data || {};
