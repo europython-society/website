@@ -44,6 +44,10 @@
         {
           "name": "FAQ",
           "path": "/faq"
+        },
+        {
+          "name": "Visa Support Letter",
+          "path": "/visa"
         }
       ]
     }
