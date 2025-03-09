@@ -30,5 +30,9 @@ const htmlContent = `<!DOCTYPE html>
 <body></body>
 </html>`;
 
-fs.writeFileSync(path.join(GENERATED_DIR, "redirect.html"), htmlContent, "utf-8");
+fs.writeFileSync(
+  path.join(GENERATED_DIR, "redirect.html"),
+  htmlContent,
+  "utf-8"
+);
 console.log("✅ redirect.html generated successfully!");

@@ -8,7 +8,7 @@ import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import metaTags from "astro-meta-tags";
-import publicDir from 'astro-public';
+import publicDir from "astro-public";
 
 // https://astro.build/config
 export default defineConfig({
