@@ -52,6 +52,10 @@
         {
           "name": "FAQ",
           "path": "/faq"
+        },
+        {
+          "name": "Financial Aid",
+          "path": "/finaid"
         }
       ]
     }
