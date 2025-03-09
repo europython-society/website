@@ -1,10 +1,9 @@
 ---
 title: Planning Survey
-subtitle: Share Your Ideas for EP 2025
+subtitle: Share Your Ideas for EP2025
 url: https://forms.gle/riw6CvML8ck94A4V9
 image: "./planning-survey.jpg"
 ---
 
-Your ideas matter! Help us shape EuroPython 2025 by sharing your thoughts and
-suggestions in our planning survey. Your feedback will help us create a
-conference that meets the needs and interests of our community.
+Have ideas to make EuroPython 2025 better? Share them with us and help build a
+conference that works for **YOU**!

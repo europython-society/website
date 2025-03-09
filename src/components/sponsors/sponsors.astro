@@ -4,7 +4,7 @@ import { Separator } from "../separator/separator";
 import { Fragment } from "react";
 import { Fullbleed } from "../layout/fullbleed";
 
-import { ButtonLink } from "../button-link";
+import ButtonLink from "../button-link/button-link.astro";
 import { Title } from "../typography/title";
 
 import SponsorTier from "./sponsor-tier.astro";
@@ -70,7 +70,7 @@ const topTier = sponsorTiers.find((tier) => tier.name === "Keystone");
           }
 
           <div class="mt-4">
-            <ButtonLink href="/sponsor">Become a sponsor</ButtonLink>
+            <ButtonLink url="/sponsor">Become a sponsor</ButtonLink>
           </div>
         </div>
       </div>

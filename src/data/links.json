@@ -12,12 +12,24 @@
           "path": "/programme/selection"
         },
         {
+          "name": "Community Voting",
+          "path": "/programme/voting"
+        },
+        {
           "name": "Speaker Mentorship",
           "path": "/programme/mentorship"
         },
         {
-          "name": "Call for Proposals",
-          "path": "/programme/cfp"
+          "name": "C API Summit",
+          "path": "/programme/c-api-summit"
+        },
+        {
+          "name": "WebAssembly Summit",
+          "path": "/programme/wasm-summit"
+        },
+        {
+          "name": "Rust Summit",
+          "path": "/programme/rust-summit"
         }
       ]
     },
@@ -40,6 +52,10 @@
         {
           "name": "FAQ",
           "path": "/faq"
+        },
+        {
+          "name": "Financial Aid",
+          "path": "/finaid"
         }
       ]
     }
