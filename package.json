@@ -20,7 +20,7 @@
     "@fontsource-variable/inter": "^5.1.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^19.0.7",
-    "@types/react-dom": "^18.3.5",
+    "@types/react-dom": "^19.0.4",
     "astro": "^5.1.6",
     "astro-meta-tags": "^0.3.1",
     "clsx": "^2.1.1",
