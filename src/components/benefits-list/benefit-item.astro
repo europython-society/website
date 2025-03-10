@@ -23,11 +23,12 @@ const Icon = {
 }[icon];
 ---
 
-<li class="grid max-w-full grid-cols-[3rem_1fr] gap-5 mb-8">
-  <Icon class="w-full h-auto block m-0 self-start" />
-  <div>
-    <h5 class="text-2xl
-    font-bold">{title}</h5>
-    <p><slot /></p>
+<div class="mb-8 md:mb-4 max-w-full">
+  <div class="flex items-center gap-3 mb-1">
+    <Icon class="w-5 h-auto m-0 flex-shrink-0" />
+    <div class="text-xl font-extrabold">{title}</div>
   </div>
-</li>
+  <div class="mt-1 leading-relaxed pl-8 md:pl-0">
+    <slot />
+  </div>
+</div>

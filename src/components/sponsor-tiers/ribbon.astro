@@ -1,0 +1,53 @@
+---
+interface Props {
+  className?: string;
+  style?: Record<string, string>;
+}
+
+const { className, style } = Astro.props;
+---
+
+<svg
+  class={`ribbon-svg ${className || ''}
+    w-[80px] h-[200px] md:w-[60px] md:right-[-5px] lg:w-[80px] lg:right-[-6px] top-[-16px] absolute
+    transform-origin-[top_right] transition-all duration-300 ease-in-out`}
+  viewBox="0 0 105 180"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlnsXlink="http://www.w3.org/1999/xlink"
+  style={style}
+>
+  <defs>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="overlay">
+      <stop stop-color="#ffffff" offset="0%" stop-opacity={0.4} />
+      <stop stop-color="#ffffff" offset="80%" stop-opacity={0} />
+    </linearGradient>
+  </defs>
+
+  <g stroke="none" stroke-width={1} fill="none" fill-rule="evenodd">
+    <g transform="translate(-805.000000, -3436.000000)" fill="currentColor">
+      <g id="Tiers" transform="translate(90.000000, 2384.000000)">
+        <g id="Silver" transform="translate(437.000000, 1042.000000)">
+          <g id="Silver-Tag" transform="translate(278.000000, 10.000000)">
+            <polygon
+              id="Rectangle"
+              points="0 0 95 0 95 200 47.5 164.192211 0 200"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g stroke="none" stroke-width={1} fill="none" fill-rule="evenodd">
+      <g transform="translate(-805.000000, -3436.000000)" fill="url(#overlay)">
+        <g id="Tiers" transform="translate(90.000000, 2384.000000)">
+          <g id="Silver" transform="translate(437.000000, 1042.000000)">
+            <g id="Silver-Tag" transform="translate(278.000000, 10.000000)">
+              <polygon
+                id="Rectangle"
+                points="0 0 95 0 95 200 47.5 164.192211 0 200"
+              />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>

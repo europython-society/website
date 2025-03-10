@@ -1,0 +1,342 @@
+---
+import { Title } from "../typography/title";
+import Ribbon from "./ribbon.astro";
+import ButtonLink from "../button-link/button-link.astro"
+
+interface Props {
+  signupLink: string;
+}
+
+const { signupLink = "#" } = Astro.props;
+
+interface SponsorTierProps {
+  title: string;
+  slotsLeft?: number | null | string;
+  price: number | string;
+  features: string[];
+}
+
+const tiers: SponsorTierProps[] = [
+  {
+    title: "Keystone",
+    slotsLeft: "Exclusive",
+    price: "Custom Pricing",
+    features: [
+  `<span style="font-size: 1.2rem; margin-top: 5;">Everything in the Diamond tier, plus <strong>white glove bespoke customisation tailored specifically to your needs</strong>.</span><br><br>`,
+
+  `<span style="font-size: 1.2rem; margin-top: 5;">We’re happy to walk you through <strong>every step</strong> to create a sponsorship experience that’s <strong>uniquely yours</strong>, with <strong>full support to bring your vision to life</strong>.</span>`,
+  ],
+  },
+  {
+    title: "Diamond",
+    slotsLeft: "2",
+    price: 30_000,
+features: [
+      "<strong>Extra large</strong> booth in exhibit hall",
+      "<strong>10</strong> conference tickets (€5000 value)",
+      "<strong>10</strong> remote tickets (€1500 value)",
+      "<strong>10</strong> conference vouchers with 30% discount (€1500 value)",
+      "<strong>5 min slot during the opening session</strong>",
+      "<strong>5 min lightning talk slot</strong>",
+      "<strong>5 min slot during the closing session</strong>",
+      "<strong>One-time email to all conference participants</strong>",
+      "<strong>1 technical case study posted on dev.to and the EuroPython blog </strong>",
+      "Video ad(s) (silent) on venue digital signage",
+      "1 technical talk slot (30 min)</strong>",
+      "Unlimited job postings on website",
+      "1 job posting on EuroPython blog",
+      "Dedicated sponsor page on website",
+      "Sponsor spotlight in 6 newsletters",
+      "Custom Discord channel",
+      "Video ad(s) on livestreams",
+      "Recruiting Session/Talent Track access",
+      "Media corner access",
+      "Published interview on YouTube channel",
+      "1 custom YouTube short",
+      "Logo on <strong>lecterns</strong>, livestreams, recordings, banners, website, signage",
+      "1 repost on EuroPython socials (35k total reach)",
+      "Welcome post on EuroPython social media",
+    ],
+  },
+  {
+    title: "Platinum",
+    slotsLeft: "4",
+    price: 18_000,
+    features: [
+      "<strong>Large</strong> booth in exhibit hall",
+      "<strong>6</strong> conference tickets (€3000 value)",
+      "<strong>6</strong> remote tickets (€900 value)",
+       "<strong>6</strong> conference vouchers with 30% discount (€900 value)",
+      "Video ad(s) (silent) on venue digital signage",
+      "<strong>1 technical talk slot (30 min)</strong>",
+      "<strong>Unlimited</strong> job postings on website",
+      "1 job posting on EuroPython blog",
+      "<strong>Dedicated sponsor page on website</strong>",
+      "<strong>Sponsor spotlight in 6 newsletters</strong>",
+      "<strong>Custom Discord channel</strong>",
+      "Video ad(s) on livestreams",
+      "Recruiting Session/Talent Track access",
+      "<strong>Media corner access</strong>",
+      "<strong>Published interview on YouTube channel</strong>",
+      "<strong>1 custom YouTube short</strong>",
+      "Logo on <strong>livestreams</strong>, recordings, banners, website, signage",
+      "1 repost on EuroPython socials (35k total reach)",
+      "Welcome post on EuroPython social media",
+    ],
+  },
+
+  {
+    title: "Gold",
+    price: 9_500,
+    slotsLeft: "10",
+    features: [
+      "Booth in exhibit hall",
+      "<strong>3</strong> conference tickets (€1500 value)",
+      "<strong>3</strong> remote tickets (€450 value)",
+      "Video ad(s) (silent) on venue digital signage",
+      "1 job posting on EuroPython blog",
+      "<strong>5</strong> job postings on website",
+      "<strong>Video ad(s) on livestreams</strong>",
+      "<strong>Recruiting Session/Talent Track access</strong>",
+      "Logo on <strong>recordings</strong>, <strong>banners</strong>, website, signage",
+      "<strong>1 repost on EuroPython socials (35k total reach)</strong>",
+      "Welcome post on EuroPython social media",
+    ],
+  },
+
+  {
+    title: "Silver",
+    price: 6_500,
+    slotsLeft: "10",
+    features: [
+      "Small booth in exhibit hall",
+      "2 conference tickets (€1000 value)",
+      "2 remote tickets (€300 value)",
+      "Video ad(s) (silent) on venue digital signage",
+      "1 job posting on EuroPython blog",
+      "2 job postings on website",
+      "Logo on website and signage",
+      "Welcome post on EuroPython social media",
+    ],
+  },
+  {
+    title: "Bronze",
+    price: 2_000,
+    slotsLeft: "unlimited",
+   features: [
+      "<strong>1 conference ticket (€500 value)</strong>",
+      "1 remote ticket (€150 value)",
+      "Logo on website and signage",
+      "Welcome post on EuroPython social media",
+    ],
+      },
+  {
+    title: "Patron",
+    price: 1_000,
+    slotsLeft: "unlimited",
+   features: [
+      "1 remote ticket (€150 value)",
+      "Logo on website and signage",
+      "Welcome post on EuroPython social media",
+    ],  },
+];
+
+const getRibbonClass = (title: string) => {
+  const classes = {
+    Keystone: "text-sponsor-keystone",
+    Diamond: "text-sponsor-diamond",
+    Platinum: "text-sponsor-platinum",
+    Gold: "text-sponsor-gold",
+    Silver: "text-sponsor-silver",
+    Bronze: "text-sponsor-bronze",
+    Patron: "text-sponsor-patron",
+  };
+  return classes[title as keyof typeof classes] || "";
+};
+
+const formatPrice = (price: number | string) => {
+  if (typeof price === "string") return price;
+  return new Intl.NumberFormat("en", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
+  }).format(price);
+};
+---
+
+<div class="sponsor-tiers-container">
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold">Most Popular Options</h2>
+    <p class="text-xl mt-2">Ideal for companies seeking high brand visibility and strong participant engagement</p>
+    <p class="text-xl mt-[-10px] mb-12 font-bold italic">Packages without booth space available at a discounted rate</p>
+  </div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 md:gap-2 lg:gap-10 gap-10">
+
+  {tiers
+    .filter(tier => tier.title === "Silver" || tier.title === "Platinum" || tier.title === "Gold")
+    .sort((a, b) => {
+      const order = { "Silver": 1, "Platinum": 2, "Gold": 3 };
+      return order[a.title] - order[b.title];
+    })
+    .map((tier) => (
+      <div class="bg-white text-black rounded-2xl p-6 pb-20 relative not-prose z-0">
+        <div class="h-[160px]">
+          <Ribbon
+            className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
+             style={{ zIndex: "-1", top: "-55px" }}
+          />
+          <Title level={3} className="mt-0 !mb-2">
+            {tier.title}
+          </Title>
+          <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
+          <div class="text-xl mt-4">
+            {tier.slotsLeft ? (
+              <>
+                <span>{tier.slotsLeft}</span> slot{tier.slotsLeft == 1 ? "" : "s"}{" "}
+                remaining
+              </>
+            ) : (
+              <>Fully booked</>
+            )}
+          </div>
+        </div>
+
+        <p class="font-bold text-base">This tier includes:</p>
+        <ul class="text-base list-none pl-0">
+          {tier.features.map((feature) => (
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6">✔️</span>
+              <span set:html={feature}></span>
+            </li>
+          ))}
+        </ul>
+      <div class="absolute bottom-4 right-4">
+        <ButtonLink url={signupLink}>Sign Up Now!</ButtonLink>
+      </div>
+
+      </div>
+    ))}
+  </div>
+
+  <div class="text-center mb-8 mt-16">
+    <h2 class="text-3xl font-bold">Major Supporters</h2>
+    <p class="text-xl mt-2 mb-12">Unique sponsorship tiers designed to make your company stand out from the rest</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+    {tiers.filter(tier => tier.title === "Diamond" || tier.title === "Keystone")
+    .sort((a, b) => {
+      const order = { "Diamond": 1, "Keystone": 2};
+      return order[a.title] - order[b.title];
+    })
+
+    .map((tier) => (
+      <div class="bg-white text-black rounded-2xl p-6 pb-20 relative not-prose z-0">
+        <div class="h-[160px]">
+          <Ribbon
+            className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
+            style={{ zIndex: "-1", top: "-55px"}}
+          />
+          <Title level={3} className="mt-0 !mb-2">
+            {tier.title}
+          </Title>
+          <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
+          <div class="text-xl">
+            {tier.slotsLeft === "Exclusive" ? (
+              <>Exclusive</>
+            ) : tier.slotsLeft ? (
+              <>
+                <span>{tier.slotsLeft}</span> slot{tier.slotsLeft == 1 ? "" : "s"}{" "}
+                remaining
+              </>
+            ) : (
+              <>Fully booked</>
+            )}
+          </div>
+        </div>
+
+        <p class="font-bold text-base">This tier includes:</p>
+        <ul class="text-base list-none pl-0">
+          {tier.features.map((feature) => (
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6">✔️</span>
+              <span set:html={feature}></span>
+            </li>
+          ))}
+        </ul>
+      <div class="absolute bottom-4 right-4">
+        <ButtonLink url={signupLink}>Sign Up Now!</ButtonLink>
+      </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="text-center mb-8 mt-16">
+    <h2 class="text-3xl font-bold">Starter Tiers</h2>
+    <p class="text-xl mt-2 mb-12">Perfect opportunity for companies with more modest budgets</p>
+  </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-9 lg:gap-10 w-full md:w-5/6 lg:w-5/6 mx-auto">
+    {tiers.filter(tier => tier.title === "Patron" || tier.title === "Bronze")
+    .sort((a, b) => {
+      const order = { "Patron": 1, "Bronze": 2};
+      return order[a.title] - order[b.title];
+    })
+    .map((tier) => (
+      <div class="bg-white text-black rounded-2xl p-6 pb-20 relative not-prose z-0">
+        <div class="h-[160px]">
+          <Ribbon
+            className={`absolute -right-6 -top-8 ${getRibbonClass(tier.title)}`}
+            style={{ zIndex: "-1", top: "-55px" }}
+          />
+          <Title level={3} className="mt-0 !mb-2">
+            {tier.title}
+          </Title>
+          <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
+          <div class="text-xl">
+            {tier.slotsLeft ? (
+              <>
+                <span>{tier.slotsLeft}</span> slot{tier.slotsLeft == 1 ? "" : "s"}{" "}
+                remaining
+              </>
+            ) : (
+              <>Fully booked</>
+            )}
+          </div>
+        </div>
+
+        <p class="font-bold text-base">This tier includes:</p>
+        <ul class="text-base list-none pl-0">
+          {tier.features.map((feature) => (
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6">✔️</span>
+              <span set:html={feature}></span>
+            </li>
+          ))}
+        </ul>
+      <div class="absolute bottom-4 right-4">
+        <ButtonLink url={signupLink}>Sign Up Now!</ButtonLink>
+      </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+<style is:global>
+  .sponsor-tiers-container {
+    width: 100vw;
+    max-width: 1400px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    .sponsor-tiers-container {
+      width: 100%;
+      padding: 0 10px;
+      position: relative;
+    }
+  }
+</style>

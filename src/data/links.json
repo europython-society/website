@@ -47,6 +47,15 @@
       ]
     },
     {
+      "name": "Sponsorship",
+      "items": [
+        {
+          "name": "Sponsor Packages",
+          "path": "/sponsorship/sponsor"
+        }
+      ]
+    },
+    {
       "name": "Info & Support",
       "items": [
         {
