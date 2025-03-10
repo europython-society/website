@@ -52,7 +52,7 @@ jobs:
         run: make preview BRANCH=$GITHUB_BRANCH_NAME
 
       - name: Update PR Comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         if: github.event_name == 'pull_request'
 
         with:
