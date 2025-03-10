@@ -19,7 +19,7 @@ interface SponsorTierProps {
 const tiers: SponsorTierProps[] = [
   {
     title: "Keystone",
-    slotsLeft: 1,
+    slotsLeft: "Exclusive",
     price: "Custom Pricing",
     features: [
   `<span style="font-size: 1.2rem; margin-top: 5;">Everything in the Diamond tier, plus <strong>white glove bespoke customisation tailored specifically to your needs</strong>.</span><br><br>`,
@@ -242,7 +242,9 @@ const formatPrice = (price: number | string) => {
           </Title>
           <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
           <div class="text-xl">
-            {tier.slotsLeft ? (
+            {tier.slotsLeft === "Exclusive" ? (
+              <>Exclusive</>
+            ) : tier.slotsLeft ? (
               <>
                 <span>{tier.slotsLeft}</span> slot{tier.slotsLeft == 1 ? "" : "s"}{" "}
                 remaining
