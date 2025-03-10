@@ -1,0 +1,11 @@
+{
+  "redirects": {
+    "/cfp": "/programme/cfp",
+    "/c-api-summit": "/programme/c-api-summit/",
+    "/planning": "https://forms.gle/riw6CvML8ck94A4V9",
+    "/reviewers": "https://forms.gle/4GTJjwZ1nHBGetM18",
+    "/rust-summit": "/programme/rust-summit/",
+    "/voting": "/programme/voting/",
+    "/wasm-summit": "/programme/wasm-summit/"
+  }
+}
