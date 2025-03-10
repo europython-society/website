@@ -16,7 +16,7 @@
     "@astrojs/mdx": "^4.0.5",
     "@astrojs/react": "^4.1.4",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.4",
+    "@astrojs/tailwind": "^6.0.0",
     "@fontsource-variable/inter": "^5.1.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^19.0.7",
