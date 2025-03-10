@@ -56,6 +56,10 @@
         {
           "name": "Financial Aid",
           "path": "/finaid"
+        },
+        {
+          "name": "Visa Support Letter",
+          "path": "/visa"
         }
       ]
     }
