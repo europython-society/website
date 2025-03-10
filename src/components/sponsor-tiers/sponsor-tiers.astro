@@ -11,7 +11,7 @@ const { signupLink = "#" } = Astro.props;
 
 interface SponsorTierProps {
   title: string;
-  totalSlots?: number | null | string;
+  slotsLeft?: number | null | string;
   price: number | string;
   features: string[];
 }
@@ -19,7 +19,7 @@ interface SponsorTierProps {
 const tiers: SponsorTierProps[] = [
   {
     title: "Keystone",
-    totalSlots: 1/1,
+    slotsLeft: 1,
     price: "Custom Pricing",
     features: [
   `<span style="font-size: 1.2rem; margin-top: 5;">Everything in the Diamond tier, plus <strong>white glove bespoke customisation tailored specifically to your needs</strong>.</span><br><br>`,
@@ -29,7 +29,7 @@ const tiers: SponsorTierProps[] = [
   },
   {
     title: "Diamond",
-    totalSlots: "2/2",
+    slotsLeft: "2",
     price: 30_000,
 features: [
       "<strong>Extra large</strong> booth in exhibit hall",
@@ -60,7 +60,7 @@ features: [
   },
   {
     title: "Platinum",
-    totalSlots: "4/4",
+    slotsLeft: "4",
     price: 18_000,
     features: [
       "<strong>Large</strong> booth in exhibit hall",
@@ -88,7 +88,7 @@ features: [
   {
     title: "Gold",
     price: 9_500,
-    totalSlots: "10/10",
+    slotsLeft: "10",
     features: [
       "Booth in exhibit hall",
       "<strong>3</strong> conference tickets (€1500 value)",
@@ -107,7 +107,7 @@ features: [
   {
     title: "Silver",
     price: 6_500,
-    totalSlots: "10/10",
+    slotsLeft: "10",
     features: [
       "Small booth in exhibit hall",
       "2 conference tickets (€1000 value)",
@@ -122,7 +122,7 @@ features: [
   {
     title: "Bronze",
     price: 2_000,
-    totalSlots: "unlimited",
+    slotsLeft: "unlimited",
    features: [
       "<strong>1 conference ticket (€500 value)</strong>",
       "1 remote ticket (€150 value)",
@@ -133,7 +133,7 @@ features: [
   {
     title: "Patron",
     price: 1_000,
-    totalSlots: "unlimited",
+    slotsLeft: "unlimited",
    features: [
       "1 remote ticket (€150 value)",
       "Logo on website and signage",
@@ -191,13 +191,13 @@ const formatPrice = (price: number | string) => {
           </Title>
           <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
           <div class="text-xl mt-4">
-            {tier.totalSlots ? (
+            {tier.slotsLeft ? (
               <>
-                <span>{tier.totalSlots}</span> slot{tier.totalSlots == 1 ? "" : "s"}{" "}
-                available
+                <span>{tier.slotsLeft}</span> slot{tier.slotsLeft == 1 ? "" : "s"}{" "}
+                remaining
               </>
             ) : (
-              <>No slot available</>
+              <>Fully booked</>
             )}
           </div>
         </div>
@@ -242,13 +242,13 @@ const formatPrice = (price: number | string) => {
           </Title>
           <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
           <div class="text-xl">
-            {tier.totalSlots ? (
+            {tier.slotsLeft ? (
               <>
-                <span>{tier.totalSlots}</span> slot{tier.totalSlots == 1 ? "" : "s"}{" "}
-                available
+                <span>{tier.slotsLeft}</span> slot{tier.slotsLeft == 1 ? "" : "s"}{" "}
+                remaining
               </>
             ) : (
-              <>No slot available</>
+              <>Fully booked</>
             )}
           </div>
         </div>
@@ -291,13 +291,13 @@ const formatPrice = (price: number | string) => {
           </Title>
           <div class="font-bold text-3xl">{formatPrice(tier.price)}</div>
           <div class="text-xl">
-            {tier.totalSlots ? (
+            {tier.slotsLeft ? (
               <>
-                <span>{tier.totalSlots}</span> slot{tier.totalSlots == 1 ? "" : "s"}{" "}
-                available
+                <span>{tier.slotsLeft}</span> slot{tier.slotsLeft == 1 ? "" : "s"}{" "}
+                remaining
               </>
             ) : (
-              <>No slot available</>
+              <>Fully booked</>
             )}
           </div>
         </div>
