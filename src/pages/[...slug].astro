@@ -12,6 +12,7 @@ import BenefitsList from "../components/benefits-list/benefits-list.astro";
 import BenefitItem from "../components/benefits-list/benefit-item.astro";
 import { Note } from "../components/note";
 import { SponsorTiers } from "../components/sponsor-tiers";
+import Accordion from "../components/accordion/accordion.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("pages");
@@ -44,6 +45,7 @@ const description = post.data.subtitle;
         Note,
         SponsorTiers,
         hr: Separator,
+        Accordion
       }}
     />
   </Prose>
